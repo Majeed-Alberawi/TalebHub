@@ -1,0 +1,224 @@
+@use "../abstracts" as *;
+
+// Variables
+
+.courses-carousel {
+  margin: 0 auto;
+
+  .carousel-header {
+    @include flex-between;
+    margin-bottom: 2rem;
+
+    .carousel-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: $text-primary;
+      margin: 0;
+    }
+
+    .carousel-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    border-radius: $base-border-radius;
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+
+      .carousel-slide {
+        min-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr !important;
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+          grid-template-columns: repeat(2, 1fr) !important;
+        }
+      }
+    }
+  }
+
+  .course-card {
+    background: $white-color;
+    border-radius: $base-border-radius;
+    box-shadow: $shadow-light;
+    overflow: hidden;
+    transition: $base-transition;
+    border: 1px solid $border-color;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $shadow-medium;
+    }
+
+    .course-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $base-transition;
+      }
+
+      .course-category {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: rgba(37, 99, 235, 0.9);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+    }
+    &:hover img {
+      transform: scale(1.05);
+    }
+
+    .course-content {
+      padding: 1.5rem;
+
+      .course-title {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0 0 0.5rem 0;
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .course-instructor {
+        color: $text-secondary;
+        font-size: 0.875rem;
+        margin: 0 0 1rem 0;
+      }
+
+      .course-stats {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.875rem;
+
+        > div {
+          display: flex;
+          align-items: center;
+          gap: 0.25rem;
+          color: $text-secondary;
+        }
+
+        .rating {
+          color: $warning-color;
+
+          span {
+            color: $text-secondary;
+          }
+        }
+      }
+
+      .course-price {
+        @include flex-between;
+
+        .current-price {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: $success-color;
+        }
+
+        .original-price {
+          font-size: 0.875rem;
+          color: $text-secondary;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+.carousel {
+  .carousel-indicators {
+    @include flex-center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+
+    .indicator {
+      width: 10px;
+      height: 10px;
+      border-radius: $base-indicators-border-radius;
+      border: none;
+      background: $border-color;
+      cursor: pointer;
+      transition: $base-transition;
+
+      &.active {
+        background: $primary-color;
+        transform: scale(1.2);
+      }
+
+      &:hover {
+        background: $secondary-color;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .control-btn {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid $border-color;
+    background: $white-color;
+    border-radius: $base-border-radius;
+    cursor: pointer;
+    transition: $base-transition;
+    color: $text-secondary;
+
+    &:hover:not(:disabled) {
+      background: $primary-color;
+      color: white;
+      border-color: $primary-color;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+}
+// Responsive adjustments
+@media (max-width: 768px) {
+  .courses-carousel {
+    padding: 1rem 0.5rem;
+
+    .carousel-header {
+      .carousel-title {
+        font-size: 1.5rem;
+      }
+    }
+
+    .course-card {
+      .course-content {
+        padding: 1rem;
+
+        .course-stats {
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+}

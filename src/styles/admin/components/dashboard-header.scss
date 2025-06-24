@@ -1,0 +1,164 @@
+@use "../abstracts" as *;
+
+/* Header Styles */
+.top-nav {
+  // position: fixed;
+  .container {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    border-bottom: 1px solid #e1e4e8;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    margin-top: 0;
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    .label {
+      display: flex;
+      align-items: center;
+
+      .label-badge {
+        @include flex-center;
+        gap: 5px;
+        background-color: $secondary-color;
+        border: 2px solid $primary-color;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    .search-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #656d76;
+      font-size: 14px;
+    }
+    .search-input {
+      width: 100%;
+      background-color: #f6f8fa;
+      border: 1px solid #d0d7de;
+      border-radius: 6px;
+      padding: 8px 12px 8px 36px;
+      color: #24292f;
+      font-size: 14px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
+        Arial, sans-serif;
+      transition: all 0.2s ease;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: #0969da;
+      box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.3);
+      background-color: #ffffff;
+    }
+    .search-input::placeholder {
+      color: #656d76;
+    }
+  }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .nav-button {
+    position: relative;
+    background: none;
+    border: none;
+    color: #656d76;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #f6f8fa;
+      color: #24292f;
+    }
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #da3633;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 5px;
+    border-radius: 10px;
+    min-width: 16px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .profile-button {
+    background: none;
+    border: none;
+    color: #656d76;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: #f6f8fa;
+      color: #24292f;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 0 16px;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 8px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-right {
+    gap: 4px;
+  }
+
+  .nav-button,
+  .profile-button {
+    padding: 6px;
+  }
+}

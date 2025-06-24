@@ -1,0 +1,444 @@
+// Main Color
+$primary-color: #133e87;
+$secondary-color: #608bc1;
+$tertiary-color: #cbdceb;
+$inverted-color: #f3f3e0;
+$white-color: #ffffff;
+$background-color: #f3f7fb;
+$accent-color: #3b82f6;
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$danger-color: #ef4444;
+
+$primary-trans: #133e8721;
+
+// Text Color
+$text-primary: #131313;
+$text-inverted-static: #ffffff;
+$text-secondary: #64748b;
+$text-muted: #9ca3af;
+
+// Hover Colors
+$primary-hover-color: #0b2b63;
+$black-hover-color: #02020227;
+
+// Bases
+$base-padding: 0.75rem;
+$base-margin: 0.75rem;
+$base-xl-padding: 1.5rem;
+$base-xl-margin: 1.5rem;
+$base-section-margin: 3rem;
+$base-section-padding: 3rem;
+$base-input-padding: 8.5px 12px;
+$base-border-radius: 10px;
+$border-radius-sm: 8px;
+$base-indicators-border-radius: calc($base-border-radius / 3);
+
+// Transition
+$base-transition: all 0.2s ease;
+$border-color: #e2e8f0;
+
+// Shadows
+$shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+// Additional variables for About Us page
+$hero-gradient: linear-gradient(
+  135deg,
+  $primary-color 0%,
+  $secondary-color 100%
+);
+$card-hover-transform: translateY(-4px);
+$section-max-width: 1200px;
+
+.about-us {
+  line-height: 1.6;
+  color: $text-primary;
+
+  .container {
+    // max-width: $section-max-width;
+    // margin: 0 auto;
+
+    @media (max-width: 768px) {
+      padding: 0 $base-padding;
+    }
+  }
+
+  // Hero Section
+  .hero-section {
+    background: $hero-gradient;
+    color: $text-inverted-static;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    //   opacity: 0.3;
+    //   z-index: -1;
+    // }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: $base-section-padding * 2 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: $base-padding $base-xl-padding;
+      border-radius: $base-border-radius * 2;
+      margin-bottom: $base-xl-margin;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      .badge-icon {
+        font-size: 1.2rem;
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: $base-xl-margin;
+      line-height: 1.2;
+
+      .rocket-icon {
+        margin-right: 0.5rem;
+        font-size: 0.9em;
+      }
+    }
+
+    .hero-description {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto $base-xl-margin * 2;
+      opacity: 0.9;
+    }
+
+    .platform-highlight {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: $base-xl-padding;
+      border-radius: $base-border-radius;
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+
+      strong {
+        color: $inverted-color;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Section Headers
+  .section-header {
+    text-align: center;
+    margin-bottom: $base-section-margin;
+
+    .section-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 80px;
+      height: 80px;
+      background: $primary-trans;
+      border-radius: 50%;
+      margin-bottom: $base-xl-margin;
+      color: $primary-color;
+    }
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: $base-xl-margin;
+    color: $text-primary;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: $text-secondary;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  // Mission Section
+  .mission-section {
+    padding: $base-section-padding * 1.5 0;
+    background-color: $background-color;
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $base-section-margin;
+      margin-top: $base-section-margin;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: $base-xl-margin;
+      }
+    }
+
+    .mission-card {
+      background: $white-color;
+      padding: $base-section-padding;
+      border-radius: $base-border-radius;
+      box-shadow: $shadow-light;
+      text-align: center;
+      transition: $base-transition;
+      border: 1px solid $border-color;
+
+      &:hover {
+        transform: $card-hover-transform;
+        box-shadow: $shadow-medium;
+        border-color: $primary-color;
+      }
+
+      .card-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background: $primary-trans;
+        border-radius: 50%;
+        margin-bottom: $base-xl-margin;
+        color: $primary-color;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: $base-margin;
+        color: $text-primary;
+      }
+
+      p {
+        color: $text-secondary;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  // Why Section
+  .why-section {
+    padding: $base-section-padding * 1.5 0;
+
+    .why-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: $base-section-margin * 2;
+      align-items: center;
+
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+        gap: $base-section-margin;
+        text-align: center;
+      }
+    }
+
+    .why-description {
+      font-size: 1.1rem;
+      color: $text-secondary;
+      margin-bottom: $base-xl-margin * 2;
+      line-height: 1.7;
+    }
+
+    .platform-benefits {
+      div {
+        // margin-bottom: $base-xl-margin;
+        color: $text-primary;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        // strong {
+        //   color: $primary-color;
+        // }
+        .logo-text {
+          color: $primary-color;
+        }
+      }
+
+      .benefits-list {
+        list-style: none;
+        padding: 0;
+
+        li {
+          position: relative;
+          padding: $base-padding 0 $base-padding $base-xl-margin * 1.5;
+          font-size: 1.05rem;
+          color: $text-secondary;
+
+          &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: $success-color;
+            font-weight: bold;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .why-visual {
+      display: flex;
+      justify-content: center;
+
+      .visual-card {
+        background: $white-color;
+        padding: $base-section-padding;
+        border-radius: $base-border-radius;
+        box-shadow: $shadow-medium;
+        text-align: center;
+        max-width: 300px;
+        border: 1px solid $border-color;
+
+        .icon {
+          color: $primary-color;
+          margin-bottom: $base-xl-margin;
+          font-size: 2rem;
+        }
+
+        h3 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: $base-margin;
+          color: $text-primary;
+        }
+
+        p {
+          color: $text-secondary;
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  // Vision Section
+  .vision-section {
+    background-color: $background-color;
+    padding: $base-section-padding * 1.5 0;
+    text-align: center;
+
+    .vision-content {
+      max-width: 800px;
+      margin: 0 auto;
+
+      .vision-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        background: $white-color;
+        border-radius: 50%;
+        margin-bottom: $base-xl-margin;
+        color: $accent-color;
+        box-shadow: $shadow-light;
+      }
+
+      .vision-text {
+        font-size: 1.2rem;
+        color: $text-primary;
+        line-height: 1.7;
+      }
+    }
+  }
+
+  // Final Section
+  .final-section {
+    // background: $hero-gradient;
+    // color: $text-inverted-static;
+    padding: $base-section-padding * 1.5 0;
+    text-align: center;
+
+    .final-content {
+      max-width: 700px;
+      margin: 0 auto;
+
+      .final-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: $base-section-margin;
+        opacity: 0.95;
+      }
+
+      .cta-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: $base-margin;
+        background: rgba(255, 69, 69, 0.1);
+        backdrop-filter: blur(10px);
+        padding: $base-xl-padding;
+        border-radius: $base-border-radius;
+        border: 2px solid rgba(255, 69, 69, 0.5);
+
+        .heart-icon {
+          color: $danger-color;
+          filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.3));
+        }
+
+        span {
+          font-weight: 500;
+          font-size: 1.05rem;
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .hero-section {
+      padding: $base-section-padding 0;
+
+      .hero-description {
+        font-size: 1.1rem;
+      }
+
+      .platform-highlight {
+        padding: $base-padding;
+        font-size: 0.95rem;
+      }
+    }
+
+    .mission-section,
+    .why-section,
+    .vision-section,
+    .final-section {
+      padding: $base-section-padding 0;
+    }
+
+    .section-title {
+      margin-bottom: $base-margin;
+    }
+
+    .why-section .why-content {
+      gap: $base-xl-margin;
+    }
+
+    .final-section .cta-section {
+      flex-direction: column;
+      gap: $base-padding;
+    }
+  }
+}

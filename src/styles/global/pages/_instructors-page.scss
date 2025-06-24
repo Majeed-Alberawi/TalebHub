@@ -1,0 +1,444 @@
+@use "../abstracts" as *;
+
+// Instructors Page Styles
+.instructors-page {
+  min-height: 100vh;
+  background-color: $background-color;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $base-xl-padding;
+  }
+}
+
+// Header Section
+.instructors-header {
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  color: $text-inverted-static;
+  padding: $base-section-padding 0;
+  text-align: center;
+
+  .header-content {
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: $base-xl-margin;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Search Section
+.search-section {
+  padding: $base-section-padding 0;
+  background-color: $white-color;
+  border-bottom: 1px solid $border-color;
+
+  .search-filters {
+    display: flex;
+    gap: $base-xl-margin;
+    align-items: center;
+    margin-bottom: $base-xl-margin;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: $base-margin;
+    }
+  }
+
+  .search-bar {
+    flex: 1;
+    position: relative;
+
+    .search-icon {
+      position: absolute;
+      left: $base-padding;
+      top: 50%;
+      transform: translateY(-50%);
+      color: $text-muted;
+      width: 20px;
+      height: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: $base-input-padding;
+      padding-left: 3rem;
+      border: 2px solid $border-color;
+      border-radius: $base-border-radius;
+      font-size: 1rem;
+      transition: $base-transition;
+      background-color: $bg-secondary;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 3px $primary-trans;
+      }
+
+      &::placeholder {
+        color: $text-muted;
+      }
+    }
+  }
+
+  .filter-controls {
+    .filter-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: $base-input-padding;
+      background-color: $bg-secondary;
+      border: 2px solid $border-color;
+      border-radius: $base-border-radius;
+      color: $text-primary;
+      cursor: pointer;
+      transition: $base-transition;
+
+      &:hover {
+        background-color: $tertiary-color;
+      }
+
+      .chevron {
+        transition: transform 0.2s ease;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .filters-panel {
+    background-color: $bg-secondary;
+    border: 1px solid $border-color;
+    border-radius: $base-border-radius;
+    padding: $base-xl-padding;
+
+    .filter-group {
+      label {
+        display: block;
+        font-weight: 600;
+        color: $text-primary;
+        margin-bottom: 0.5rem;
+      }
+
+      select {
+        width: 100%;
+        padding: $base-input-padding;
+        border: 1px solid $border-color;
+        border-radius: $border-radius-sm;
+        background-color: $white-color;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Results Header
+.results-header {
+  margin-bottom: $base-section-margin;
+
+  h2 {
+    color: $text-primary;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}
+
+// Instructors Grid Section
+.instructors-grid-section {
+  padding: $base-section-padding 0;
+
+  .instructors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: $base-section-margin;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: $base-xl-margin;
+    }
+  }
+}
+
+// Instructor Card
+.instructor-card {
+  background-color: $white-color;
+  border-radius: $border-radius-lg;
+  padding: $base-xl-padding;
+  box-shadow: $shadow-medium;
+  transition: $base-transition;
+  border: 1px solid $border-color;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: $shadow-lg;
+  }
+
+  .card-header {
+    display: flex;
+    gap: $base-xl-margin;
+    margin-bottom: $base-xl-margin;
+
+    .instructor-avatar {
+      position: relative;
+      flex-shrink: 0;
+
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $tertiary-color;
+      }
+
+      .rating-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: $success-color;
+        color: $white-color;
+        padding: 0.25rem 0.5rem;
+        border-radius: $base-indicators-border-radius;
+        font-size: 0.75rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        .star-icon {
+          width: 12px;
+          height: 12px;
+        }
+      }
+    }
+
+    .instructor-info {
+      flex: 1;
+
+      h3 {
+        color: $text-primary;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+      }
+
+      .title {
+        color: $text-secondary;
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+
+      .department {
+        background-color: $primary-trans;
+        color: $primary-color;
+        padding: 0.25rem 0.5rem;
+        border-radius: $base-indicators-border-radius;
+        font-size: 0.875rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .card-stats {
+    display: flex;
+    gap: $base-xl-margin;
+    margin-bottom: $base-xl-margin;
+
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: $text-secondary;
+      font-size: 0.875rem;
+
+      .stat-icon {
+        width: 16px;
+        height: 16px;
+        color: $primary-color;
+      }
+    }
+  }
+
+  .specializations {
+    margin-bottom: $base-xl-margin;
+
+    h4 {
+      color: $text-primary;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .spec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .spec-tag {
+        background-color: $bg-secondary;
+        color: $text-primary;
+        padding: 0.25rem 0.75rem;
+        border-radius: $base-indicators-border-radius;
+        font-size: 0.875rem;
+        border: 1px solid $border-color;
+      }
+    }
+  }
+
+  .bio {
+    margin-bottom: $base-xl-margin;
+
+    p {
+      color: $text-secondary;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  }
+
+  .contact-info {
+    margin-bottom: $base-xl-margin;
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      color: $text-secondary;
+      font-size: 0.875rem;
+
+      .contact-icon {
+        width: 16px;
+        height: 16px;
+        color: $primary-color;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .card-actions {
+    display: flex;
+    gap: $base-margin;
+
+    .btn-primary {
+      flex: 1;
+      background-color: $primary-color;
+      color: $white-color;
+      border: none;
+      padding: $base-input-padding;
+      border-radius: $base-border-radius;
+      font-weight: 600;
+      cursor: pointer;
+      transition: $base-transition;
+
+      &:hover {
+        background-color: $primary-hover-color;
+      }
+    }
+
+    .btn-secondary {
+      flex: 1;
+      background-color: transparent;
+      color: $primary-color;
+      border: 2px solid $primary-color;
+      padding: $base-input-padding;
+      border-radius: $base-border-radius;
+      font-weight: 600;
+      cursor: pointer;
+      transition: $base-transition;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+      }
+    }
+  }
+}
+
+// No Results State
+.no-results {
+  text-align: center;
+  padding: $base-section-padding;
+
+  h3 {
+    color: $text-primary;
+    font-size: 1.5rem;
+    margin-bottom: $base-margin;
+  }
+
+  p {
+    color: $text-secondary;
+    font-size: 1rem;
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .instructors-header {
+    padding: $base-xl-padding 0;
+
+    .header-content h1 {
+      font-size: 2.5rem;
+    }
+
+    .header-content p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .search-section {
+    padding: $base-xl-padding 0;
+  }
+
+  .instructors-grid-section {
+    padding: $base-xl-padding 0;
+  }
+
+  .instructor-card {
+    .card-header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .card-stats {
+      flex-direction: column;
+      gap: $base-margin;
+    }
+
+    .card-actions {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 $base-padding;
+  }
+
+  .instructors-header .header-content h1 {
+    font-size: 2rem;
+  }
+
+  .instructor-card {
+    padding: $base-padding;
+  }
+}

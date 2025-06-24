@@ -1,0 +1,28 @@
+@use "../abstracts" as *;
+
+.primary-button {
+  background-color: $primary-color;
+  border-radius: 5px;
+  padding: 11px 16px;
+  outline: none;
+  border: none;
+  color: $text-inverted-static;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: $base-transition;
+  width: fit-content;
+
+  a {
+    color: $white-color;
+
+    .icon {
+      margin-left: 10px;
+    }
+  }
+
+  &:hover {
+    background-color: $primary-hover-color;
+  }
+}

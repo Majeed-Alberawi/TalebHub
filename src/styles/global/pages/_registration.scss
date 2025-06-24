@@ -1,0 +1,219 @@
+@use "../abstracts" as *;
+
+.registration {
+  padding: 20px;
+  max-height: 100%;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 40px);
+
+    .welcome-box {
+      width: 100%;
+      height: 100%;
+      padding: $base-xl-padding;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: $primary-color;
+      border-radius: 15px 0 0 15px;
+
+      .logo-box {
+        margin-bottom: $base-section-margin;
+        width: 100%;
+      }
+
+      .welcome-content {
+        .welcome-text {
+          color: $text-inverted-static;
+
+          h1 {
+            margin-bottom: $base-xl-margin;
+          }
+
+          p {
+            font-size: $font-size-xl;
+          }
+        }
+
+        .links-box {
+          .social-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $base-xl-padding;
+            margin-top: $base-section-margin;
+            a {
+              color: $text-inverted-static;
+              margin: 0 $base-margin;
+              .social-icon {
+                font-size: $font-size-xl;
+                padding: $base-padding;
+                transition: $base-transition;
+
+                &:hover {
+                  background-color: $black-hover-color;
+                  border-radius: 50%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .registration-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: $base-xl-padding;
+      background-color: $inverted-color;
+      border-radius: 0 15px 15px 0;
+
+      .info-box {
+        .info-header {
+          // text-align: right;
+          margin-bottom: $base-section-margin;
+
+          h2 {
+            color: $primary-color;
+            margin-bottom: $base-margin;
+          }
+
+          p {
+          }
+        }
+
+        .input-box {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+
+          .input {
+            width: 100%;
+
+            label {
+              display: block;
+              margin-bottom: 10px;
+            }
+
+            input {
+              width: 100%;
+              display: block;
+              padding: $base-input-padding;
+              outline: none;
+              border: 2px solid #bbbbbb;
+              border-radius: $base-border-radius;
+              font-size: 1.2rem;
+              background-color: transparent;
+
+              &:focus {
+                border: 2px solid $primary-color;
+              }
+            }
+          }
+
+          .button-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            a {
+              color: $text-primary;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+        .info-footer {
+          padding: $base-xl-padding;
+          width: 100%;
+          margin-top: $base-margin;
+
+          p {
+            text-align: center;
+            a {
+              font-weight: 600;
+              color: $primary-color;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+
+          .support-box {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .registration {
+    padding: 20px 0;
+    .container {
+      flex-direction: column;
+      height: calc(100vh - 40px);
+
+      .welcome-box {
+        border-radius: 15px 15px 0 0;
+        height: unset;
+        .logo-box {
+          justify-content: center;
+          margin-bottom: 0;
+        }
+
+        .welcome-content {
+          color: $text-inverted-static;
+
+          h1 {
+            display: none;
+          }
+
+          p {
+            display: none;
+          }
+
+          .links-box {
+            .social-content {
+              padding: 0;
+              margin-top: 0;
+            }
+
+            .support-box {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .registration-content {
+        border-radius: 0 0 15px 15px;
+
+        .info-box {
+          .info-header {
+            margin-bottom: $base-xl-margin;
+          }
+          .info-footer {
+            padding: 0;
+            .support-box {
+              display: block;
+              margin-top: $base-margin;
+              a {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

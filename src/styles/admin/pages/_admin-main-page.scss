@@ -1,0 +1,57 @@
+@use "../abstracts/" as *;
+
+.main-section {
+  transition: $transform-transition;
+  min-height: 100vh;
+  background: $background-color;
+  margin-left: 0;
+
+  .main-content {
+    padding: 24px;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: 16rem;
+  }
+
+  .content-card {
+    background: $white-color;
+    border-radius: 0.5rem;
+    box-shadow: $shadow-light;
+    padding: 1.5rem;
+
+    .content-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: $text-primary;
+      margin-bottom: 1rem;
+    }
+
+    .content-text {
+      color: $text-secondary;
+      margin-bottom: 1rem;
+    }
+
+    .content-list {
+      list-style-type: disc;
+      list-style-position: inside;
+      color: $text-secondary;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .status-card {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      background: $primary-light;
+      border-radius: 0.5rem;
+
+      .status-text {
+        color: $primary-color;
+        font-weight: 500;
+      }
+    }
+  }
+}

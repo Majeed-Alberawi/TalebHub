@@ -1,0 +1,55 @@
+@use "../abstracts" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .logo-text {
+    display: flex;
+    align-items: flex-start !important;
+    font-family: "Pacifico", cursive;
+
+    &.normal {
+      color: $primary-color !important;
+    }
+
+    &.inverted {
+      color: $inverted-color !important;
+    }
+
+    // align-items: flex-end;
+
+    .main {
+      // margin-bottom: -10px;
+      font-size: $font-size-4xl;
+    }
+    span {
+      font-size: $font-size-lg;
+    }
+  }
+}
+
+h2 {
+  .logo-text {
+    color: $inverted-color;
+    font-family: "Pacifico", cursive;
+    color: $primary-color;
+    position: relative;
+    margin-right: 34px;
+
+    span {
+      font-size: $font-size-lg;
+      text-decoration: none;
+      font-weight: 400;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

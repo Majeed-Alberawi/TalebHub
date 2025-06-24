@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+
+.support-box {
+  a {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: $base-padding;
+    transition: $base-transition;
+
+    &:hover {
+      background-color: $black-hover-color;
+      border-radius: $base-border-radius;
+    }
+    .support-icon {
+      margin: 0 6px;
+    }
+    color: $text-inverted-static;
+  }
+}

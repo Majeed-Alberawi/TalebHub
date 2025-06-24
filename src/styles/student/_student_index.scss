@@ -1,0 +1,10 @@
+// src/styles/main.scss
+@use "./abstracts" as *;
+
+// Abstracts (variables, mixins, functions)
+@use "./abstracts/index" as abstracts;
+
+@use "./components/index" as components;
+
+// Pages
+@use "./pages/index";

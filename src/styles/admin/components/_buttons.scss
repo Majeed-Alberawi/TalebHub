@@ -1,0 +1,124 @@
+@use "../abstracts" as *;
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding: $btn-padding-y $btn-padding-x;
+  font-size: $btn-font-size;
+  font-family: $font-family-primary;
+  line-height: 1.6666;
+  border-radius: $btn-border-radius;
+  border: $border-width $border-style transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: $btn-transition;
+  white-space: nowrap;
+  user-select: none;
+
+  .icon {
+    color: $fill-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  // Primary Button
+  // Primary Button
+  &--primary {
+    background-color: $btn-color-primary;
+    border-color: $btn-color-primary;
+    color: $color-white;
+    box-shadow: 0 2px 8px rgba(9, 105, 218, 0.2);
+
+    &:hover:not(:disabled) {
+      background-color: $btn-color-primary-active;
+    }
+
+    &:active:not(:disabled) {
+      background: $btn-color-primary-active;
+      border-color: $btn-color-primary-active;
+    }
+  }
+
+  // Action Buttons
+  &--action {
+    padding: $btn-padding-y-sm $btn-padding-x-sm;
+    min-width: 28px;
+    height: 28px;
+    border-radius: $border-radius-sm;
+    font-size: $font-size-xs;
+    border: none;
+    background: transparent;
+    color: $color-gray-500;
+    transition: all 0.15s ease-in-out;
+
+    &:hover:not(:disabled) {
+      background: $color-gray-100;
+      color: $color-gray-700;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(9, 105, 218, 0.1);
+    }
+  }
+
+  &--view {
+    &:hover:not(:disabled) {
+      color: $color-view;
+      background: rgba(9, 105, 218, 0.1);
+    }
+  }
+
+  &--edit {
+    &:hover:not(:disabled) {
+      color: $color-edit;
+      background: rgba(191, 135, 0, 0.1);
+    }
+  }
+
+  &--delete {
+    &:hover:not(:disabled) {
+      color: $color-delete;
+      background: rgba(209, 36, 47, 0.1);
+    }
+  }
+
+  // Pagination Buttons
+  &--pagination {
+    padding: $btn-padding-y $btn-padding-x;
+    background: $color-white;
+    border: $border;
+    color: $color-gray-700;
+    font-size: $btn-font-size;
+    gap: $spacing-sm;
+
+    &:hover:not(:disabled) {
+      background: $color-gray-50;
+      border-color: $color-gray-300;
+    }
+
+    &:focus:not(:disabled) {
+      border-color: $color-primary;
+      box-shadow: 0 0 0 3px rgba(9, 105, 218, 0.1);
+    }
+
+    &-disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+
+      &:hover {
+        background: $color-white;
+        border-color: $border-color;
+      }
+    }
+  }
+}

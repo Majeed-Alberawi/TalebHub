@@ -1,0 +1,36 @@
+@use "../abstracts" as *;
+
+// Start Landing
+.landing {
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    .image-box {
+      width: 50%;
+    }
+
+    .text-box {
+      gap: 35px;
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      h2 {
+        font-size: $font-size-4xl;
+
+        .logo-text {
+          font-size: inherit;
+          // text-decoration: underline;
+          span {
+            text-decoration: none;
+          }
+        }
+      }
+      p {
+        font-size: $font-size-xl;
+      }
+    }
+  }
+}
