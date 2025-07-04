@@ -1,264 +1,259 @@
 @use "../abstracts" as *;
 
 // Main Dashboard Styles
-.educational-dashboard {
-  min-height: 100vh;
-  background-color: $background-color;
-  font-family: "Arial", sans-serif;
 
-  // Dashboard Container
-  .dashboard-container {
-    padding: 0 $base-xxl-margin;
-    max-width: 1200px;
-    margin: 0 auto;
+// Dashboard Container
+.dashboard-container {
+  padding: 0 $base-xxl-margin;
+  max-width: 1200px;
+  margin: 0 auto;
 
-    // Programs Section
-    .programs-section {
-      margin-bottom: $base-section-margin;
+  // Programs Section
+  .programs-section {
+    margin-bottom: $base-section-margin;
 
-      .section-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: $text-primary;
-        margin-bottom: $base-xl-margin;
-      }
-
-      // Program Card
-      .program-card {
-        background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
-        border-radius: $border-radius-lg;
-        padding: $base-xxl-margin;
-        color: $text-inverted-static;
-        position: relative;
-        overflow: hidden;
-        margin-bottom: $base-xxl-margin;
-
-        .program-card-decoration {
-          position: absolute;
-          top: -20px;
-          right: 20px;
-          font-size: 4rem;
-          opacity: 0.1;
-          transform: rotate(-15deg);
-        }
-
-        .program-card-content {
-          position: relative;
-          z-index: 2;
-
-          .program-header {
-            display: flex;
-            align-items: center;
-            gap: $base-margin;
-            margin-bottom: $base-margin;
-
-            .program-icon {
-              background: rgba(255, 255, 255, 0.2);
-              border-radius: $base-border-radius;
-              padding: $base-padding;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              font-size: 1.5rem;
-            }
-
-            .program-info {
-              .program-name {
-                font-size: 1.5rem;
-                font-weight: 700;
-                margin: 0 0 0.25rem 0;
-              }
-
-              .program-version {
-                font-size: 0.9rem;
-                opacity: 0.9;
-                margin: 0;
-              }
-            }
-          }
-
-          .program-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: $base-margin;
-          }
-
-          .program-description {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-bottom: $base-xl-margin;
-            line-height: 1.5;
-          }
-
-          .progress-section {
-            margin-bottom: $base-xl-margin;
-
-            .progress-info {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              margin-bottom: 0.5rem;
-              font-size: 0.9rem;
-            }
-
-            .progress-bar {
-              background: rgba(255, 255, 255, 0.2);
-              border-radius: 20px;
-              height: 8px;
-              overflow: hidden;
-
-              .progress-fill {
-                background: $white-color;
-                height: 100%;
-                border-radius: 20px;
-                transition: width 0.6s ease;
-              }
-            }
-          }
-
-          .action-button {
-            background: $primary-color;
-            color: $text-inverted-static;
-            border: none;
-            border-radius: $base-border-radius;
-            padding: $base-padding $base-xxl-margin;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: $base-transition;
-
-            &:hover {
-              background: $primary-hover-color;
-              transform: translateY(-2px);
-            }
-          }
-        }
-      }
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-primary;
+      margin-bottom: $base-xl-margin;
     }
 
-    // Quick Actions Grid
-    .quick-actions-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: $base-xl-margin;
-      margin-bottom: $base-section-margin;
+    // Program Card
+    .program-card {
+      background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+      border-radius: $border-radius-lg;
+      padding: $base-xxl-margin;
+      color: $text-inverted-static;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: $base-xxl-margin;
 
-      .quick-action-card {
-        background: $white-color;
-        border-radius: $border-radius-lg;
-        padding: $base-xl-padding;
-        box-shadow: $shadow-light;
-        border: 1px solid $border-color;
-        cursor: pointer;
-        transition: $base-transition;
+      .program-card-decoration {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        font-size: 4rem;
+        opacity: 0.1;
+        transform: rotate(-15deg);
+      }
 
-        &:hover {
-          transform: translateY(-4px);
-          box-shadow: $shadow-lg;
-        }
+      .program-card-content {
+        position: relative;
+        z-index: 2;
 
-        .card-content {
+        .program-header {
           display: flex;
           align-items: center;
           gap: $base-margin;
+          margin-bottom: $base-margin;
 
-          .card-icon {
-            width: 50px;
-            height: 50px;
+          .program-icon {
+            background: rgba(255, 255, 255, 0.2);
             border-radius: $base-border-radius;
+            padding: $base-padding;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
           }
 
-          .card-text {
-            flex: 1;
-
-            h4 {
-              font-size: 1rem;
-              font-weight: 600;
-              color: $text-primary;
+          .program-info {
+            .program-name {
+              font-size: 1.5rem;
+              font-weight: 700;
               margin: 0 0 0.25rem 0;
             }
 
-            p {
-              font-size: 0.85rem;
-              color: $text-secondary;
+            .program-version {
+              font-size: 0.9rem;
+              opacity: 0.9;
               margin: 0;
-              line-height: 1.4;
             }
           }
         }
 
-        // Card Type Colors
-        &.library .card-icon {
-          background: $primary-trans;
-          color: $primary-color;
+        .program-title {
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: $base-margin;
         }
 
-        &.certificates .card-icon {
-          background: rgba($success-color, 0.1);
-          color: $success-color;
+        .program-description {
+          font-size: 0.9rem;
+          opacity: 0.9;
+          margin-bottom: $base-xl-margin;
+          line-height: 1.5;
         }
 
-        &.profile .card-icon {
-          background: rgba($warning-color, 0.1);
-          color: $warning-color;
+        .progress-section {
+          margin-bottom: $base-xl-margin;
+
+          .progress-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+          }
+
+          .progress-bar {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            height: 8px;
+            overflow: hidden;
+
+            .progress-fill {
+              background: $white-color;
+              height: 100%;
+              border-radius: 20px;
+              transition: width 0.6s ease;
+            }
+          }
         }
 
-        &.settings .card-icon {
-          background: rgba($danger-color, 0.1);
-          color: $danger-color;
+        .action-button {
+          background: $primary-color;
+          color: $text-inverted-static;
+          border: none;
+          border-radius: $base-border-radius;
+          padding: $base-padding $base-xxl-margin;
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          transition: $base-transition;
+
+          &:hover {
+            background: $primary-hover-color;
+            transform: translateY(-2px);
+          }
         }
       }
     }
+  }
 
-    // Recent Activity Section
-    .recent-activity-section {
+  // Quick Actions Grid
+  .quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $base-xl-margin;
+    margin-bottom: $base-section-margin;
+
+    .quick-action-card {
       background: $white-color;
       border-radius: $border-radius-lg;
       padding: $base-xl-padding;
       box-shadow: $shadow-light;
       border: 1px solid $border-color;
+      cursor: pointer;
+      transition: $base-transition;
 
-      .section-header {
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-lg;
+      }
+
+      .card-content {
         display: flex;
         align-items: center;
-        gap: $base-padding;
-        margin-bottom: $base-xl-margin;
+        gap: $base-margin;
 
-        svg {
-          color: $primary-color;
+        .card-icon {
+          width: 50px;
+          height: 50px;
+          border-radius: $base-border-radius;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           font-size: 1.2rem;
         }
 
-        h3 {
-          font-size: 1.2rem;
-          font-weight: 600;
-          color: $text-primary;
-          margin: 0;
+        .card-text {
+          flex: 1;
+
+          h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: $text-primary;
+            margin: 0 0 0.25rem 0;
+          }
+
+          p {
+            font-size: 0.85rem;
+            color: $text-secondary;
+            margin: 0;
+            line-height: 1.4;
+          }
         }
       }
 
-      .empty-state {
-        text-align: center;
-        padding: $base-xxl-margin 0;
+      // Card Type Colors
+      &.library .card-icon {
+        background: $primary-trans;
+        color: $primary-color;
+      }
 
-        .empty-icon {
-          font-size: 3rem;
-          color: $tertiary-color;
-          margin-bottom: $base-margin;
-        }
+      &.certificates .card-icon {
+        background: rgba($success-color, 0.1);
+        color: $success-color;
+      }
 
-        p {
-          color: $text-secondary;
-          font-size: 0.9rem;
-          margin: 0;
-        }
+      &.profile .card-icon {
+        background: rgba($warning-color, 0.1);
+        color: $warning-color;
+      }
+
+      &.settings .card-icon {
+        background: rgba($danger-color, 0.1);
+        color: $danger-color;
+      }
+    }
+  }
+
+  // Recent Activity Section
+  .recent-activity-section {
+    background: $white-color;
+    border-radius: $border-radius-lg;
+    padding: $base-xl-padding;
+    box-shadow: $shadow-light;
+    border: 1px solid $border-color;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: $base-padding;
+      margin-bottom: $base-xl-margin;
+
+      svg {
+        color: $primary-color;
+        font-size: 1.2rem;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0;
+      }
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: $base-xxl-margin 0;
+
+      .empty-icon {
+        font-size: 3rem;
+        color: $tertiary-color;
+        margin-bottom: $base-margin;
+      }
+
+      p {
+        color: $text-secondary;
+        font-size: 0.9rem;
+        margin: 0;
       }
     }
   }

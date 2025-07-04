@@ -47,8 +47,8 @@ function App() {
         </Route>
 
         {/* Start Student Dashboard */}
-        <Route path="/student/overview" element={<Layout />}>
-          <Route index element={<StudentDashboard />} />
+        <Route path="/student" element={<Layout />}>
+          <Route path="overview" element={<StudentDashboard />} />
           <Route path="courses" element={<CoursesTab />} />
           {/* /student/courses */}
         </Route>
