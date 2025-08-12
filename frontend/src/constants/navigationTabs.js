@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// constants/navigationTabs.js
 import {
   faChartLine,
   faBookOpen,
@@ -16,10 +16,8 @@ const DEFAULT_CONFIG = {
   title: "My Learning Board",
   headerIcon: faGraduationCap,
   navigationTabs: [
-    { id: "overview", label: "Progress Dashboard", icon: faHome },
+    { id: "overview", label: "Dashboard", icon: faHome },
     { id: "courses", label: "Courses", icon: faGraduationCap },
-    // { id: "tests", label: "Tests", icon: faFlask },
-    // { id: "certificates", label: "Certificates", icon: faCertificate },
     { id: "notifications", label: "Announcements", icon: faBell },
   ],
   statsCards: [
@@ -110,4 +108,5 @@ const DEFAULT_CONFIG = {
     showDailyGoals: true,
   },
 };
+
 export default DEFAULT_CONFIG;

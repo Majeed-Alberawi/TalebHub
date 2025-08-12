@@ -1,0 +1,616 @@
+@use "../abstracts" as *;
+
+.course-editor {
+  min-height: 100vh;
+  background-color: $background-color;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .course-header {
+    background: $white-color;
+    // padding: $base-xl-padding;
+    border-bottom: 1px solid $border-color;
+    box-shadow: $shadow-light;
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+
+      h1 {
+        color: $primary-color;
+        margin: 0;
+        font-size: 1.75rem;
+        font-weight: 600;
+      }
+
+      .header-actions {
+        display: flex;
+        gap: $base-margin;
+      }
+    }
+  }
+}
+
+.course-sidebar {
+  width: 350px;
+  background: $white-color;
+  border-right: 1px solid $border-color;
+  overflow-y: auto;
+  border-radius: $base-border-radius 0 0 $base-border-radius;
+
+  .sidebar-header {
+    padding: $base-xl-padding;
+    border-bottom: 1px solid $border-color;
+
+    h2 {
+      color: $text-primary;
+      margin: 0 0 $base-margin 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    .btn-primary {
+      width: 100%;
+    }
+  }
+
+  .sections-list {
+    .section-item {
+      border-bottom: 1px solid $border-color;
+
+      .course-section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $base-padding $base-xl-padding;
+        cursor: pointer;
+        transition: $base-transition;
+
+        &:hover {
+          background-color: $hover-bg;
+        }
+
+        .section-title {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: $text-primary;
+          font-weight: 500;
+          flex: 1;
+
+          svg {
+            width: 12px;
+            height: 12px;
+            color: $text-secondary;
+          }
+        }
+
+        .section-actions {
+          display: flex;
+          gap: 0.25rem;
+          opacity: 0;
+          transition: $base-transition;
+        }
+
+        &:hover .section-actions {
+          opacity: 1;
+        }
+      }
+
+      .lessons-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background: $bg-secondary;
+
+        .lesson-item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: $base-padding $base-xl-padding;
+          padding-left: calc($base-xl-padding + 1.5rem);
+          cursor: pointer;
+          transition: $base-transition;
+          border-left: 3px solid transparent;
+
+          &:hover {
+            background-color: $hover-bg;
+          }
+
+          &.active {
+            background-color: $primary-light;
+            border-left-color: $primary-color;
+          }
+
+          .lesson-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+
+            .lesson-icon {
+              width: 24px;
+              height: 24px;
+              border-radius: $border-radius-sm;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              &.video {
+                background-color: #fee2e2;
+                color: $danger-color;
+              }
+
+              &.file {
+                background-color: #dbeafe;
+                color: $accent-color;
+              }
+
+              svg {
+                width: 12px;
+                height: 12px;
+              }
+            }
+
+            .lesson-title {
+              color: $text-primary;
+              font-size: 0.875rem;
+            }
+          }
+
+          .lesson-actions {
+            display: flex;
+            gap: 0.25rem;
+            opacity: 0;
+            transition: $base-transition;
+          }
+
+          &:hover .lesson-actions {
+            opacity: 1;
+          }
+        }
+
+        .add-lesson-btn {
+          padding: 0.5rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.course-main-content {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 600px;
+
+  .content-header {
+    margin-bottom: $base-xl-margin;
+
+    h3 {
+      color: $text-primary;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: $text-secondary;
+      margin: 0;
+    }
+  }
+
+  .lesson-editor {
+    background: $white-color;
+    border-radius: 0 $base-border-radius $base-border-radius 0;
+    padding: $base-xl-padding;
+    box-shadow: $shadow-light;
+    height: 100%;
+
+    .lesson-header {
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      margin-bottom: $base-xl-margin;
+      padding-bottom: $base-padding;
+      border-bottom: 1px solid $border-color;
+
+      .lesson-title-section {
+        flex: 1;
+
+        h4 {
+          color: $text-primary;
+          margin: 0 0 0.25rem 0;
+          font-size: 1.25rem;
+          font-weight: 600;
+        }
+
+        .lesson-type {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.25rem;
+          padding: 0.25rem 0.5rem;
+          background: $bg-tertiary;
+          border-radius: $base-indicators-border-radius;
+          font-size: 0.75rem;
+          color: $text-secondary;
+          text-transform: uppercase;
+          font-weight: 500;
+
+          svg {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+    }
+
+    .upload-section {
+      .upload-area {
+        border: 2px dashed $border-color;
+        border-radius: $base-border-radius;
+        padding: $base-section-padding;
+        text-align: center;
+        transition: $base-transition;
+        cursor: pointer;
+
+        &:hover {
+          border-color: $primary-color;
+          background-color: $primary-light;
+        }
+
+        .upload-icon {
+          width: 48px;
+          height: 48px;
+          margin: 0 auto $base-margin;
+          background: $bg-tertiary;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $text-secondary;
+
+          svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .upload-text {
+          color: $text-primary;
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+        }
+
+        .upload-hint {
+          color: $text-muted;
+          font-size: 0.875rem;
+        }
+      }
+
+      .file-info {
+        background: $bg-secondary;
+        border-radius: $base-border-radius;
+        padding: $base-padding;
+        display: flex;
+        align-items: center;
+        gap: $base-margin;
+
+        .file-icon {
+          width: 32px;
+          height: 32px;
+          background: $accent-color;
+          border-radius: $border-radius-sm;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $white-color;
+
+          svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+
+        .file-details {
+          flex: 1;
+
+          .file-name {
+            color: $text-primary;
+            font-weight: 500;
+            margin-bottom: 0.125rem;
+          }
+
+          .file-type {
+            color: $text-muted;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  .student-lesson-view {
+    background: $white-color;
+    border-radius: $base-border-radius;
+    padding: $base-xl-padding;
+    box-shadow: $shadow-light;
+
+    .video-player {
+      width: 100%;
+      height: 400px;
+      background: #000;
+      border-radius: $base-border-radius;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $white-color;
+      margin-bottom: $base-xl-margin;
+
+      .play-button {
+        width: 80px;
+        height: 80px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: $base-transition;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
+
+        svg {
+          width: 32px;
+          height: 32px;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .file-download {
+      border: 1px solid $border-color;
+      border-radius: $base-border-radius;
+      padding: $base-xl-padding;
+      text-align: center;
+
+      .download-icon {
+        width: 64px;
+        height: 64px;
+        background: $accent-color;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white-color;
+        margin: 0 auto $base-margin;
+
+        svg {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: $base-section-padding;
+    color: $text-muted;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    svg {
+      width: 48px;
+      height: 48px;
+      margin-bottom: $base-margin;
+    }
+
+    h4 {
+      margin: 0 0 0.5rem 0;
+      color: $text-secondary;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Form styles
+.form-group {
+  margin-bottom: $base-margin;
+
+  label {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: $text-primary;
+    font-weight: 500;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: $base-input-padding;
+    border: 1px solid $border-color;
+    border-radius: $border-radius-sm;
+    font-size: 0.875rem;
+    transition: $base-transition;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 0 3px rgba(19, 62, 135, 0.1);
+    }
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: $base-margin;
+  justify-content: flex-end;
+  margin-top: $base-xl-margin;
+}
+
+// Button styles
+.btn {
+  padding: $base-input-padding;
+  border: none;
+  border-radius: $border-radius-sm;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: $base-transition;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &.btn-primary {
+    background-color: $primary-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: $primary-hover-color;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: $secondary-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+
+  &.btn-success {
+    background-color: $success-color;
+    color: $white-color;
+
+    &:hover {
+      background-color: darken($success-color, 10%);
+    }
+  }
+
+  &.btn-danger {
+    background-color: $danger-light;
+    color: $danger-color;
+
+    &:hover {
+      background-color: $danger-color;
+      color: $white-color;
+    }
+  }
+
+  &.btn-outline {
+    background-color: transparent;
+    color: $text-primary;
+    border: 1px solid $border-color;
+
+    &:hover {
+      background-color: $hover-bg;
+    }
+  }
+}
+
+.btn-icon {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  transition: $base-transition;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-secondary;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  &:hover {
+    background-color: $hover-bg;
+    color: $text-primary;
+  }
+
+  &.danger:hover {
+    background-color: $danger-light;
+    color: $danger-color;
+  }
+}
+
+// Modal/Form overlay styles
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: $white-color;
+  border-radius: $base-border-radius;
+  padding: $base-xl-padding;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: $shadow-lg;
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $base-xl-margin;
+    padding-bottom: $base-padding;
+    border-bottom: 1px solid $border-color;
+
+    h3 {
+      margin: 0;
+      color: $text-primary;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .main-content {
+    padding: $base-padding;
+  }
+}

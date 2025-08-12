@@ -13,4 +13,18 @@ export const subAdminsData = [
     status: "Active",
     role: "Sub-Admin",
   },
+  {
+    id: 3,
+    name: "Dr. Michael Chen",
+    email: "michael.chen@university.edu",
+    status: "Inactive",
+    role: "Sub-Admin",
+  },
+  {
+    id: 4,
+    name: "Ms. Sarah Williams",
+    email: "sarah.williams@university.edu",
+    status: "Active",
+    role: "Sub-Admin",
+  },
 ];

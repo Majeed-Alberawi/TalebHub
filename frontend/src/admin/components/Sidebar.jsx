@@ -37,7 +37,7 @@ export default function Sidebar({
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+  }, [setIsMobile, setIsMobileOpen]);
 
   const menuItems = [
     { id: "dashboard", icon: faChartBar, label: "Dashboard", active: true },
@@ -45,7 +45,7 @@ export default function Sidebar({
     { id: "teachers", icon: faChalkboardUser, label: "Teachers", active: true },
     { id: "students", icon: faGraduationCap, label: "Students", active: true },
     { id: "sub-admins", icon: faShieldAlt, label: "Sub Admins", active: true },
-    { id: "lessons", icon: faBook, label: "Lessons" },
+    { id: "courses", icon: faBook, label: "Courses", active: true },
     { id: "assignments", icon: faClipboardList, label: "Assignments" },
     { id: "reports", icon: faChartLine, label: "Reports" },
     { id: "notifications", icon: faBell, label: "Notifications" },
