@@ -1,10 +1,16 @@
-// src/styles/main.scss
-@use "./abstracts" as *;
+// // src/styles/main.scss
+// @use "../abstracts/variables" as *;
+// // @use "./abstracts" as *;
 
-// Abstracts (variables, mixins, functions)
-@use "./abstracts/index" as abstracts;
+// // Abstracts (variables, mixins, functions)
+// @use "./abstracts/index" as abstracts;
 
-@use "./components/index" as components;
+// @use "./components/index" as components;
 
-// Pages
-@use "./pages/index";
+// // Pages
+// @use "./pages/index";
+
+// New Code
+@import "./abstracts/index";
+@import "./components/index";
+@import "./pages/index";

@@ -1,0 +1,47 @@
+@use "./variables" as *;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $border-radius-sm;
+  font-weight: 600;
+  cursor: pointer;
+  transition: $base-transition;
+  text-decoration: none;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+// @mixin btn-base {
+//   border: none;
+//   cursor: pointer;
+//   font-family: inherit;
+//   font-weight: 500;
+//   transition: $base-transition;
+//   text-decoration: none;
+//   display: inline-flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   &:focus-visible {
+//     outline: 2px solid $primary-color;
+//     outline-offset: 2px;
+//   }
+// }

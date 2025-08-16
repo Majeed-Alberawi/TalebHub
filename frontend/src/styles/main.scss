@@ -1,8 +1,10 @@
+@import "./abstracts/variables";
+
 // Global Index
-@use "./global/global_index" as global_index;
+@import "./global/global_index";
 
 // Admin Index
-@use "./admin/admin_index" as admin_index;
+@import "./admin/admin_index";
 
 // Student Index
-@use "./student/student_index" as student_index;
+@import "./student/student_index";
