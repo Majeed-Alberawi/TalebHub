@@ -1,17 +1,18 @@
-// src/styles/main.scss
-@use "./abstracts" as *;
+// Use the main variables
+// @use "../abstracts/variables" as *;
 
-// Abstracts (variables, mixins, functions)
-// @use "./abstracts/index" as abstracts;
+// Import admin-specific styles
+// @import "./components/index";
 
-// // Base styles (reset, typography)
-// @use "./base/index" as base;
+// @import "./pages/index";
 
-// // Layout components
-// @use "./layout/index" as layout;
+// @import "./components/dashboard";
+// ... other admin imports
 
-// Component styles
-@use "./components/index" as components;
+// new code
+@forward "../abstracts/variables";
 
-// Page-specific styles
-@use "./pages/index" as pages;
+// @import "./base/index";
+@import "./components/index";
+// @import "./layout/index";
+@import "./pages/index";

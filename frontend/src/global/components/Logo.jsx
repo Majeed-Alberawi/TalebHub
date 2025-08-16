@@ -7,8 +7,8 @@ export default function Logo({ icon = "visible", color = "normal" }) {
           color === "normal" ? "normal" : color === "inverted" ? "inverted" : ""
         } `}
       >
-        <span className="main">Taleb</span>
-        <span>Hub</span>
+        {/* <span className="main">Taleb</span>
+        <span>Hub</span> */}
       </div>
     </div>
   );

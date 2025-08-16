@@ -1,8 +1,7 @@
-// Global Index
-@use "./global/global_index" as global_index;
+// Import variables FIRST - make them globally available
+@import "./abstracts/variables";
 
-// Admin Index
-@use "./admin/admin_index" as admin_index;
-
-// Student Index
-@use "./student/student_index" as student_index;
+// Then import other indexes
+@import "./global/global_index";
+@import "./admin/admin_index";
+@import "./student/student_index";

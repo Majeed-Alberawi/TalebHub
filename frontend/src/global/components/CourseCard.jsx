@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGraduationCap,
   faPlay,
-  faEdit,
+  // faEdit,
   faTrash,
   faUsers,
   faBookOpen,
@@ -17,10 +17,10 @@ import { useNavigate } from "react-router-dom";
 export default function CourseCard({
   course,
   userType = "student",
-  onEdit,
+  // onEdit,
   onDelete,
-  onView,
-  onContinue,
+  // onView,
+  // onContinue,
 }) {
   const navigate = useNavigate();
 

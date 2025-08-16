@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import landingImg from "../../../assets/Classroom-bro.svg";
+import landingImg from "../../../assets/dentel-academy.svg";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SubjectsDisplay from "../../components/SubjectsDisplay";

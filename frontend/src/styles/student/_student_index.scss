@@ -1,10 +1,10 @@
-// src/styles/main.scss
-@use "./abstracts" as *;
+// // Use the main variables
+// @use "../abstracts/variables" as *;
 
-// Abstracts (variables, mixins, functions)
-@use "./abstracts/index" as abstracts;
+// // Import student-specific styles
+// // ... student imports
 
-@use "./components/index" as components;
-
-// Pages
-@use "./pages/index";
+// new imports
+@import "./abstracts/index";
+@import "./components/index";
+@import "./pages/index";

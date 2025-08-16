@@ -1,20 +1,26 @@
-// src/styles/main.scss
-@use "./abstracts" as *;
+// // src/styles/main.scss
+// @use "../abstracts/variables" as *;
 
-// Abstracts (variables, mixins, functions)
-@use "./abstracts/index" as abstracts;
+// // Abstracts (variables, mixins, functions)
+// @use "./abstracts/index" as abstracts;
 
-// Base styles (reset, typography)
-@use "./base/index" as base;
+// // Base styles (reset, typography)
+// @use "./base/index" as base;
 
-// Layout components
-@use "./layout/index" as layout;
+// // Layout components
+// @use "./layout/index" as layout;
 
-// Component styles
-@use "./components/index" as components;
+// // Component styles
+// @use "./components/index" as components;
 
-// Page-specific styles
-@use "./pages/index" as pages;
+// // Page-specific styles
+// @use "./pages/index" as pages;
+
+// new imports
+@import "./base/index";
+@import "./components/index";
+@import "./layout/index";
+@import "./pages/index";
 
 html {
   scroll-behavior: smooth;

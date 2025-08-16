@@ -1,54 +1,5 @@
-// Main Color
-$primary-color: #133e87;
-$secondary-color: #608bc1;
-$tertiary-color: #cbdceb;
-$inverted-color: #f3f3e0;
-$white-color: #ffffff;
-$background-color: #f3f7fb;
-$accent-color: #3b82f6;
-$success-color: #10b981;
-$warning-color: #f59e0b;
-$danger-color: #ef4444;
+@use "../abstracts" as *;
 
-$primary-trans: #133e8721;
-
-// Text Color
-$text-primary: #131313;
-$text-inverted-static: #ffffff;
-$text-secondary: #64748b;
-$text-muted: #9ca3af;
-
-// Hover Colors
-$primary-hover-color: #0b2b63;
-$black-hover-color: #02020227;
-
-// Bases
-$base-padding: 0.75rem;
-$base-margin: 0.75rem;
-$base-xl-padding: 1.5rem;
-$base-xl-margin: 1.5rem;
-$base-section-margin: 3rem;
-$base-section-padding: 3rem;
-$base-input-padding: 8.5px 12px;
-$base-border-radius: 10px;
-$border-radius-sm: 8px;
-$base-indicators-border-radius: calc($base-border-radius / 3);
-
-// Transition
-$base-transition: all 0.2s ease;
-$border-color: #e2e8f0;
-
-// Shadows
-$shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-$shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-  0 2px 4px -1px rgba(0, 0, 0, 0.06);
-
-// Additional variables for About Us page
-$hero-gradient: linear-gradient(
-  135deg,
-  $primary-color 0%,
-  $secondary-color 100%
-);
 $card-hover-transform: translateY(-4px);
 $section-max-width: 1200px;
 
