@@ -100,7 +100,7 @@ export default function Sidebar({
         <nav className="sidebar-nav">
           {menuItems.map((item) => (
             <Link
-              to={`/adminMainPage/${item.id}`}
+              to={`/admin/${item.id}`}
               key={item.id}
               onClick={() => handleMenuClick(item.id)}
               className={`nav-item ${item.active ? "active" : ""}`}
