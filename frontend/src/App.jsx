@@ -54,6 +54,7 @@ import TeacherCourses from "./teacher/pages/TeacherCourses";
 // import TeacherSchedule from "./teacher/pages/TeacherSchedule";
 // import TeacherNotifications from "./teacher/pages/TeacherNotifications";
 import TeacherCourseEditor from "./teacher/pages/TeacherCourseEditor";
+import Profile from "./global/pages/Profile";
 
 function App() {
   return (
@@ -130,6 +131,7 @@ function App() {
         />
         <Route path="/student/overview" element={<StudentOverview />} />
         <Route path="/student/courses" element={<StudentCourses />} />
+        <Route path="/student/profile" element={<Profile />} />
         {/* <Route
           path="/student/notifications"
           element={<StudentNotifications />}
